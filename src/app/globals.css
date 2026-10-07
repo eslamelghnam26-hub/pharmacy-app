@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  color-scheme: light;
+
+  /* Page / surfaces */
+  --page: #f4f7fb;
+  --surface: #ffffff;
+  --surface-2: #eef2f7;
+  --surface-3: #e3e9f1;
+
+  /* Lines */
+  --line: #e4e9f0;
+  --line-strong: #cfd8e3;
+
+  /* Text */
+  --fg: #0f172a;
+  --fg-muted: #5b6980;
+  --fg-faint: #8b98ac;
+
+  /* Accent (pharmacy blue) */
+  --accent: #0284c7;
+  --accent-strong: #0369a1;
+  --accent-soft: #e0f2fe;
+  --accent-fg: #ffffff;
+
+  /* Chips / subtle fills */
+  --chip: #eef3f8;
+}
+
+.dark {
+  color-scheme: dark;
+
+  --page: #0a1120;
+  --surface: #101b2e;
+  --surface-2: #16243a;
+  --surface-3: #1f3049;
+
+  --line: #1b2940;
+  --line-strong: #2c3e5d;
+
+  --fg: #e8eef8;
+  --fg-muted: #9aaac4;
+  --fg-faint: #64748c;
+
+  --accent: #38bdf8;
+  --accent-strong: #0ea5e9;
+  --accent-soft: rgba(56, 189, 248, 0.12);
+  --accent-fg: #072c40;
+
+  --chip: #17263c;
+}
+
+@theme inline {
+  --color-page: var(--page);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-surface-3: var(--surface-3);
+
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+
+  --color-fg: var(--fg);
+  --color-fg-muted: var(--fg-muted);
+  --color-fg-faint: var(--fg-faint);
+
+  --color-accent: var(--accent);
+  --color-accent-strong: var(--accent-strong);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-fg: var(--accent-fg);
+
+  --color-chip: var(--chip);
+
+  --font-sans: var(--font-geist-sans), var(--font-arabic), ui-sans-serif,
+    system-ui, sans-serif;
+}
+
+@layer base {
+  * {
+    border-color: var(--line);
+  }
+
+  body {
+    background-color: var(--page);
+    color: var(--fg);
+    font-family: var(--font-sans);
+  }
+
+  ::selection {
+    background-color: var(--accent);
+    color: var(--accent-fg);
+  }
+}
+
+.tnum {
+  font-variant-numeric: tabular-nums;
+}

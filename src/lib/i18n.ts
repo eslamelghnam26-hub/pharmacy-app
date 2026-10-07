@@ -1,0 +1,321 @@
+export type Lang = "en" | "ar";
+
+const en = {
+  "brand.name": "PharmaDesk",
+  "brand.tagline": "Pharmacy Manager",
+  "brand.openMenu": "Open menu",
+  "brand.closeMenu": "Close menu",
+
+  "nav.dashboard": "Dashboard",
+  "nav.medicines": "Medicines",
+  "nav.sales": "Sales / POS",
+  "nav.suppliers": "Suppliers",
+  "nav.demo": "Demo build",
+  "nav.demoDesc": "Sample data only. Restock and purchases are not simulated.",
+
+  "settings.language": "Language",
+  "settings.theme": "Theme",
+  "settings.light": "Light",
+  "settings.dark": "Dark",
+
+  "common.cancel": "Cancel",
+  "common.delete": "Delete",
+  "common.close": "Close",
+  "common.save": "Save",
+  "common.saving": "Saving…",
+  "common.error": "Something went wrong.",
+  "common.loadError": "Could not load {what}.",
+
+  "dashboard.title": "Dashboard",
+  "dashboard.subtitle": "Overview of your pharmacy at a glance.",
+  "dashboard.totalMedicines": "Total medicines",
+  "dashboard.totalMedicinesSub": "Active products",
+  "dashboard.totalStock": "Total stock",
+  "dashboard.totalStockSub": "Units on hand",
+  "dashboard.todaySales": "Today's sales",
+  "dashboard.todaySaleOne": "{n} sale today",
+  "dashboard.todaySaleOther": "{n} sales today",
+  "dashboard.lowStock": "Low stock",
+  "dashboard.lowStockSubOk": "All healthy",
+  "dashboard.lowStockSubNeeds": "Needs restocking",
+  "dashboard.chartTitle": "Sales this week",
+  "dashboard.recentSales": "Recent sales",
+  "dashboard.receipt": "Receipt",
+  "dashboard.items": "Items",
+  "dashboard.total": "Total",
+  "dashboard.time": "Time",
+  "dashboard.emptySales": "No sales yet",
+  "dashboard.emptySalesMsg": "Completed sales will show up here.",
+  "dashboard.lowStockTitle": "Low stock",
+  "dashboard.viewAll": "View all",
+  "dashboard.nothingLow": "Nothing low in stock",
+  "dashboard.nothingLowMsg": "Every medicine has more than 10 units available.",
+  "dashboard.left": "{n} left",
+  "dashboard.expiringSoon": "Expiring within 6 months",
+  "dashboard.expiringDesc": "Review expiry dates and restock ahead of time.",
+  "dashboard.itemOne": "{n} item",
+  "dashboard.itemOther": "{n} items",
+
+  "medicines.title": "Medicines",
+  "medicines.subtitle": "Manage your pharmacy inventory.",
+  "medicines.add": "Add medicine",
+  "medicines.search": "Search by name, category or barcode…",
+  "medicines.colName": "Name",
+  "medicines.colCategory": "Category",
+  "medicines.colBarcode": "Barcode",
+  "medicines.colPurchase": "Purchase",
+  "medicines.colPrice": "Price",
+  "medicines.colStock": "Stock",
+  "medicines.colExpiry": "Expiry",
+  "medicines.colSupplier": "Supplier",
+  "medicines.noMatches": "No matches",
+  "medicines.noMatchesMsg": "Try a different search term.",
+  "medicines.empty": "No medicines yet",
+  "medicines.emptyMsg": "Add your first medicine to get started.",
+  "medicines.edit": "Edit medicine",
+  "medicines.name": "Name",
+  "medicines.category": "Category",
+  "medicines.barcode": "Barcode",
+  "medicines.purchasePrice": "Purchase price",
+  "medicines.sellingPrice": "Selling price",
+  "medicines.quantity": "Quantity",
+  "medicines.expiryDate": "Expiry date",
+  "medicines.supplier": "Supplier",
+  "medicines.noSupplier": "No supplier",
+  "medicines.errRequired": "Name, category and barcode are required.",
+  "medicines.errPrices": "Please fill in price and expiry date fields.",
+  "medicines.errDuplicate": "A medicine with this barcode already exists.",
+  "medicines.delete": "Delete medicine",
+  "medicines.deleteMsg":
+    "Remove \"{name}\" from inventory? This cannot be undone.",
+  "medicines.editAria": "Edit {name}",
+  "medicines.deleteAria": "Delete {name}",
+  "medicines.actions": "Actions",
+  "medicines.saveChanges": "Save changes",
+
+  "suppliers.title": "Suppliers",
+  "suppliers.subtitle": "Your distribution partners and their products.",
+  "suppliers.add": "Add supplier",
+  "suppliers.name": "Supplier name",
+  "suppliers.phone": "Phone",
+  "suppliers.email": "Email",
+  "suppliers.edit": "Edit supplier",
+  "suppliers.errName": "Supplier name is required.",
+  "suppliers.noLink": "No medicines linked yet",
+  "suppliers.medOne": "{n} supplied medicine",
+  "suppliers.medOther": "{n} supplied medicines",
+  "suppliers.empty": "No suppliers yet",
+  "suppliers.emptyMsg":
+    "Add a supplier to track who provides your medicines.",
+  "suppliers.delete": "Delete supplier",
+  "suppliers.deleteMsg":
+    "Remove \"{name}\"? Their medicines will be kept but no longer linked to this supplier.",
+  "suppliers.saveChanges": "Save changes",
+
+  "pos.title": "Sales / POS",
+  "pos.subtitle": "Ring up sales and manage your cart.",
+  "pos.search": "Search medicines to add…",
+  "pos.noMatches": "No matches",
+  "pos.noMatchesMsg": "Try a different search term.",
+  "pos.inStock": "{n} in stock",
+  "pos.add": "Add",
+  "pos.addMore": "Add more",
+  "pos.noStock": "No medicine in stock",
+  "pos.noStockMsg": "Add stock to medicines before selling.",
+  "pos.currentSale": "Current sale",
+  "pos.cartEmpty": "Cart is empty",
+  "pos.cartEmptyMsg": "Add items to start a sale.",
+  "pos.subtotal": "Subtotal",
+  "pos.total": "Total",
+  "pos.complete": "Complete sale",
+  "pos.completing": "Completing…",
+  "pos.maxEach": "Max {n} in stock · {price} each",
+  "pos.decrease": "Decrease quantity",
+  "pos.increase": "Increase quantity",
+  "pos.remove": "Remove {name}",
+  "pos.completed": "Sale completed",
+  "pos.receiptNo": "Receipt #{n}",
+  "pos.totalPaid": "Total paid",
+  "pos.newSale": "New sale",
+  "pos.errStock": "Only {n} in stock for {name}.",
+  "pos.errEmptyCart": "Cart is empty. Add a medicine first.",
+  "pos.errQty": "Quantity must be a whole number above zero.",
+} as const;
+
+const ar: Record<keyof typeof en, string> = {
+  "brand.name": "فارماديسك",
+  "brand.tagline": "نظام إدارة الصيدلية",
+  "brand.openMenu": "فتح القائمة",
+  "brand.closeMenu": "إغلاق القائمة",
+
+  "nav.dashboard": "لوحة التحكم",
+  "nav.medicines": "الأدوية",
+  "nav.sales": "المبيعات · نقطة البيع",
+  "nav.suppliers": "الموردون",
+  "nav.demo": "نسخة تجريبية",
+  "nav.demoDesc": "بيانات تجريبية فقط. لا تتم محاكاة إعادة التخزين والمشتريات.",
+
+  "settings.language": "اللغة",
+  "settings.theme": "المظهر",
+  "settings.light": "فاتح",
+  "settings.dark": "داكن",
+
+  "common.cancel": "إلغاء",
+  "common.delete": "حذف",
+  "common.close": "إغلاق",
+  "common.save": "حفظ",
+  "common.saving": "جارٍ الحفظ…",
+  "common.error": "حدث خطأ ما.",
+  "common.loadError": "تعذّر تحميل {what}.",
+
+  "dashboard.title": "لوحة التحكم",
+  "dashboard.subtitle": "نظرة سريعة على حالة صيدليتك.",
+  "dashboard.totalMedicines": "إجمالي الأدوية",
+  "dashboard.totalMedicinesSub": "منتجات متاحة",
+  "dashboard.totalStock": "إجمالي المخزون",
+  "dashboard.totalStockSub": "وحدة في المخزون",
+  "dashboard.todaySales": "مبيعات اليوم",
+  "dashboard.todaySaleOne": "{n} عملية بيع اليوم",
+  "dashboard.todaySaleOther": "{n} عمليات بيع اليوم",
+  "dashboard.lowStock": "مخزون منخفض",
+  "dashboard.lowStockSubOk": "المخزون جيد",
+  "dashboard.lowStockSubNeeds": "تحتاج إلى طلب",
+  "dashboard.chartTitle": "مبيعات هذا الأسبوع",
+  "dashboard.recentSales": "آخر عمليات البيع",
+  "dashboard.receipt": "الفاتورة",
+  "dashboard.items": "المنتجات",
+  "dashboard.total": "الإجمالي",
+  "dashboard.time": "الوقت",
+  "dashboard.emptySales": "لا توجد مبيعات بعد",
+  "dashboard.emptySalesMsg": "ستظهر عمليات البيع المكتملة هنا.",
+  "dashboard.lowStockTitle": "مخزون منخفض",
+  "dashboard.viewAll": "عرض الكل",
+  "dashboard.nothingLow": "لا يوجد مخزون منخفض",
+  "dashboard.nothingLowMsg": "جميع الأدوية متوفرة بأكثر من 10 وحدات.",
+  "dashboard.left": "المتبقي {n}",
+  "dashboard.expiringSoon": "تنتهي صلاحيته خلال 6 أشهر",
+  "dashboard.expiringDesc": "راجع تواريخ انتهاء الصلاحية واطلب المخزون مسبقاً.",
+  "dashboard.itemOne": "{n} عنصر",
+  "dashboard.itemOther": "{n} عناصر",
+
+  "medicines.title": "الأدوية",
+  "medicines.subtitle": "إدارة مخزون صيدليتك.",
+  "medicines.add": "إضافة دواء",
+  "medicines.search": "ابحث بالاسم أو التصنيف أو الباركود…",
+  "medicines.colName": "الاسم",
+  "medicines.colCategory": "التصنيف",
+  "medicines.colBarcode": "الباركود",
+  "medicines.colPurchase": "سعر الشراء",
+  "medicines.colPrice": "السعر",
+  "medicines.colStock": "المخزون",
+  "medicines.colExpiry": "انتهاء الصلاحية",
+  "medicines.colSupplier": "المورد",
+  "medicines.noMatches": "لا توجد نتائج",
+  "medicines.noMatchesMsg": "جرّب كلمة بحث مختلفة.",
+  "medicines.empty": "لا توجد أدوية بعد",
+  "medicines.emptyMsg": "أضف أول دواء للبدء.",
+  "medicines.edit": "تعديل دواء",
+  "medicines.name": "الاسم",
+  "medicines.category": "التصنيف",
+  "medicines.barcode": "الباركود",
+  "medicines.purchasePrice": "سعر الشراء",
+  "medicines.sellingPrice": "سعر البيع",
+  "medicines.quantity": "الكمية",
+  "medicines.expiryDate": "تاريخ الانتهاء",
+  "medicines.supplier": "المورد",
+  "medicines.noSupplier": "بدون مورد",
+  "medicines.errRequired": "الاسم والتصنيف والباركود مطلوبة.",
+  "medicines.errPrices": "يرجى تعبئة الأسعار وتاريخ الانتهاء.",
+  "medicines.errDuplicate": "يوجد دواء بنفس الباركود مسبقاً.",
+  "medicines.delete": "حذف الدواء",
+  "medicines.deleteMsg":
+    "هل تريد إزالة «{name}» من المخزون؟ لا يمكن التراجع عن هذا الإجراء.",
+  "medicines.editAria": "تعديل {name}",
+  "medicines.deleteAria": "حذف {name}",
+  "medicines.actions": "إجراءات",
+  "medicines.saveChanges": "حفظ التغييرات",
+
+  "suppliers.title": "الموردون",
+  "suppliers.subtitle": "شركاء التوزيع ومنتجاتهم.",
+  "suppliers.add": "إضافة مورد",
+  "suppliers.name": "اسم المورد",
+  "suppliers.phone": "الهاتف",
+  "suppliers.email": "البريد الإلكتروني",
+  "suppliers.edit": "تعديل مورد",
+  "suppliers.errName": "اسم المورد مطلوب.",
+  "suppliers.noLink": "لا توجد أدوية مرتبطة بعد",
+  "suppliers.medOne": "{n} دواء مورَّد",
+  "suppliers.medOther": "{n} أدوية مورَّدة",
+  "suppliers.empty": "لا يوجد موردون بعد",
+  "suppliers.emptyMsg": "أضف مورداً لمتابعة من يزوّدك بالأدوية.",
+  "suppliers.delete": "حذف المورد",
+  "suppliers.deleteMsg":
+    "هل تريد إزالة «{name}»؟ سيتم الاحتفاظ بالأدوية دون ربطها بهذا المورد.",
+  "suppliers.saveChanges": "حفظ التغييرات",
+
+  "pos.title": "المبيعات · نقطة البيع",
+  "pos.subtitle": "سجّل المبيعات وأدر سلة المشتريات.",
+  "pos.search": "ابحث عن دواء للإضافة…",
+  "pos.noMatches": "لا توجد نتائج",
+  "pos.noMatchesMsg": "جرّب كلمة بحث مختلفة.",
+  "pos.inStock": "المتاح {n}",
+  "pos.add": "إضافة",
+  "pos.addMore": "أضف المزيد",
+  "pos.noStock": "لا توجد أدوية متوفرة",
+  "pos.noStockMsg": "أضف مخزوناً للأدوية قبل البيع.",
+  "pos.currentSale": "البيع الحالي",
+  "pos.cartEmpty": "السلة فارغة",
+  "pos.cartEmptyMsg": "أضف منتجات لبدء البيع.",
+  "pos.subtotal": "المجموع الفرعي",
+  "pos.total": "الإجمالي",
+  "pos.complete": "إتمام البيع",
+  "pos.completing": "جارٍ الإتمام…",
+  "pos.maxEach": "الحد الأقصى {n} · سعر الوحدة {price}",
+  "pos.decrease": "تقليل الكمية",
+  "pos.increase": "زيادة الكمية",
+  "pos.remove": "إزالة {name}",
+  "pos.completed": "تم البيع بنجاح",
+  "pos.receiptNo": "فاتورة رقم {n}",
+  "pos.totalPaid": "المبلغ المدفوع",
+  "pos.newSale": "بيع جديد",
+  "pos.errStock": "المتاح فقط {n} وحدة من {name}.",
+  "pos.errEmptyCart": "السلة فارغة. أضف دواءً أولاً.",
+  "pos.errQty": "الكمية يجب أن تكون رقماً صحيحاً أكبر من صفر.",
+};
+
+export type TKey = keyof typeof en;
+
+export function translate(lang: Lang, key: TKey, vars?: Record<string, string | number>): string {
+  const dict = lang === "ar" ? ar : en;
+  let text: string = dict[key] ?? en[key] ?? key;
+  if (vars) {
+    for (const [k, v] of Object.entries(vars)) {
+      text = text.replaceAll(`{${k}}`, String(v));
+    }
+  }
+  return text;
+}
+
+export function parseSettings(raw: string | undefined): {
+  lang: Lang;
+  theme: "light" | "dark";
+} {
+  try {
+    const parsed: unknown = raw ? JSON.parse(decodeURIComponent(raw)) : null;
+    if (parsed && typeof parsed === "object") {
+      const p = parsed as { lang?: unknown; theme?: unknown };
+      const lang: Lang = p.lang === "ar" ? "ar" : "en";
+      const theme = p.theme === "dark" ? "dark" : "light";
+      return { lang, theme };
+    }
+  } catch {
+    // fall through to defaults
+  }
+  return { lang: "en", theme: "light" };
+}
+
+export function settingsCookieValue(lang: Lang, theme: "light" | "dark"): string {
+  return encodeURIComponent(JSON.stringify({ lang, theme }));
+}
+
+export const SETTINGS_COOKIE = "pharmacy-settings";
